@@ -84,3 +84,34 @@ def exchange_code_for_user(code: str) -> Optional[Dict[str, Any]]:
     except Exception as e:
         st.error(f"Authentication failed: {e}")
         return None
+
+
+
+
+def is_authenticated() -> bool:
+    """Checks if the user is currently logged in."""
+    import streamlit as st
+    return "user_email" in st.session_state and st.session_state.user_email is not None
+
+
+def check_admin_password():
+    """Enforces a secondary password check for admin pages."""
+    import streamlit as st
+    
+    if "admin_unlocked" not in st.session_state:
+        st.session_state.admin_unlocked = False
+        
+    if st.session_state.admin_unlocked:
+        return
+        
+    st.write("### 🔒 Admin Access Required")
+    pwd = st.text_input("Enter Admin Password", type="password", key="admin_pwd_input")
+    
+    if st.button("Unlock Admin Tools"):
+        if pwd == "2108":
+            st.session_state.admin_unlocked = True
+            st.rerun()
+        else:
+            st.error("Incorrect password.")
+            
+    st.stop()
