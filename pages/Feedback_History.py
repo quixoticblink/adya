@@ -64,3 +64,36 @@ for item in history:
             st.divider()
             st.markdown("**Raw Data (Copy for later)**")
             st.code(json.dumps(item, indent=2), language="json")
+
+st.divider()
+st.header("🍎 Teacher Tools")
+st.markdown("Download this history as a prompt to generate the next set of questions.")
+
+if history:
+    prompt_text = f"""
+You are an expert Cambridge science tutor.
+I have attached the history of a student's recent quiz attempts below in JSON format.
+
+Please analyze their performance, specifically looking for:
+1. Recurring misconceptions.
+2. Topics where they struggled (low scores).
+3. Types of questions they missed (e.g., recall vs application).
+
+Based on this analysis, generate a new set of 10-15 tailored questions to help them improve.
+- Focus on their weak areas.
+- Include a mix of difficulty levels.
+- Format the output as a JSON list of objects with keys: "id", "topic", "marks", "prompt", "answer_type".
+
+Student History JSON:
+{json.dumps(history, ensure_ascii=False, indent=2)}
+    """.strip()
+
+    st.download_button(
+        label="📥 Download Prompt for Next Quiz",
+        data=prompt_text,
+        file_name="teacher_prompt_next_quiz.txt",
+        mime="text/plain",
+        help="Upload this file to an LLM (ChatGPT, Claude, Gemini) to generate personalized follow-up questions."
+    )
+else:
+    st.info("No history available to generate a prompt.")
