@@ -1,0 +1,43 @@
+[
+  {
+    "timestamp": "2026-01-03T18:02:21.224912",
+    "question_id": "A1",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "What creative idea did Democritus have about matter that led to the idea of atoms?",
+    "student_answer": "small atoms",
+    "feedback": {
+      "verdict": "Partly correct",
+      "score_band": "1",
+      "feedback": "You have the right idea about Democritus's concept of atoms being small, but let's clarify what he really proposed. He suggested that matter is made up of tiny, indivisible particles called atoms. Keep exploring this topic!",
+      "model_answer": "Democritus proposed that all matter is made up of tiny, indivisible particles called atoms, which are too small to see.",
+      "why": "Democritus was one of the first philosophers to suggest that everything around us is made up of tiny particles. He called these particles 'atoms,' which means 'indivisible' in Greek. He imagined that if you kept dividing matter, you would eventually reach a point where you couldn't divide it anymore. This idea was revolutionary because it introduced the concept that matter has a basic building block, which we now call atoms. Although he didn't have the scientific tools we have today to prove this, his idea laid the foundation for modern chemistry.",
+      "misconceptions": [
+        "The term 'small atoms' is vague and doesn't capture Democritus's idea of indivisibility and the concept of matter being made up of these particles."
+      ],
+      "next_steps": [
+        "Review the definition of atoms and their properties.",
+        "Explore how Democritus's ideas compare to modern atomic theory.",
+        "Look into how other scientists built on Democritus's ideas."
+      ],
+      "video_queries": [
+        "What are atoms? A beginner's guide",
+        "Democritus and the atomic theory explained for kids",
+        "History of atoms and atomic theory for Grade 7"
+      ],
+      "video_links": [
+        {
+          "query": "What are atoms? A beginner's guide",
+          "url": "https://www.youtube.com/results?search_query=What+are+atoms?+A+beginner's+guide"
+        },
+        {
+          "query": "Democritus and the atomic theory explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+atomic+theory+explained+for+kids"
+        },
+        {
+          "query": "History of atoms and atomic theory for Grade 7",
+          "url": "https://www.youtube.com/results?search_query=History+of+atoms+and+atomic+theory+for+Grade+7"
+        }
+      ]
+    }
+  }
+]

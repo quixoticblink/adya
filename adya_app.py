@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import datetime
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Any
 
@@ -101,6 +102,33 @@ def safe_json_loads(text: str) -> Optional[Dict[str, Any]]:
         return json.loads(text)
     except Exception:
         return None
+
+
+def save_feedback_to_history(question: Question, answer: str, feedback: Dict[str, Any]):
+    """Appends feedback to a local JSON file for history tracking."""
+    record = {
+        "timestamp": datetime.datetime.now().isoformat(),
+        "question_id": question.id,
+        "question_topic": question.topic,
+        "question_prompt": question.prompt,
+        "student_answer": answer,
+        "feedback": feedback
+    }
+    
+    history_file = "feedback_history.json"
+    history = []
+    
+    if os.path.exists(history_file):
+        try:
+            with open(history_file, "r", encoding="utf-8") as f:
+                history = json.load(f)
+        except Exception:
+            history = []
+            
+    history.append(record)
+    
+    with open(history_file, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
 
 
 def call_openai_for_feedback(
@@ -427,6 +455,10 @@ with colA:
                         "feedback": fb,
                     }
                 )
+                
+                # Save to persistent history
+                save_feedback_to_history(q, ans_clean, fb)
+                
             except Exception as e:
                 st.error(f"Failed to get feedback: {e}")
                 st.stop()
