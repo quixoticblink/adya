@@ -21,8 +21,70 @@ import re
 import datetime
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Any
+import requests
 
 import streamlit as st
+import auth
+
+# Must be the first Streamlit command
+st.set_page_config(page_title="Grade 7 Chemistry Quiz", page_icon="🧪", layout="centered")
+
+# -----------------------------
+# Authentication Guard
+# -----------------------------
+# Must happen before any other app logic but after imports
+# Check if user is logged in
+if "user_email" not in st.session_state:
+    st.session_state.user_email = None
+
+# Handle OAuth callback
+if "code" in st.query_params:
+    code = st.query_params["code"]
+    user_info = auth.exchange_code_for_user(code)
+    if user_info:
+        st.session_state.user_email = user_info.get("email")
+        # Clear query params to clean URL
+        st.query_params.clear()
+        st.rerun()
+
+# If still not logged in, show login page
+if not st.session_state.user_email:
+    st.title("🔒 Login Required")
+    st.write("Please sign in with your Google account to access this quiz.")
+    
+    try:
+        login_url = auth.get_login_url()
+        st.link_button("Sign in with Google", login_url, type="primary")
+    except Exception as e:
+        st.error("Google Auth configuration is missing in secrets.toml.")
+        st.write("Please ask the administrator to configure [google_auth] in secrets.toml.")
+        st.code("""
+[google_auth]
+client_id = "..."
+client_secret = "..."
+redirect_uri = "http://localhost:8501"
+allowed_emails = ["..."]
+        """)
+    st.stop()
+
+# Check Allowlist
+allowed_emails = st.secrets.get("google_auth", {}).get("allowed_emails", [])
+if allowed_emails and st.session_state.user_email not in allowed_emails:
+    st.error("⛔ Access Denied")
+    st.write(f"User **{st.session_state.user_email}** is not authorized to view this app.")
+    st.write("Please contact the administrator.")
+    if st.button("Logout", type="secondary"):
+        st.session_state.user_email = None
+        st.rerun()
+    st.stop()
+
+# Show logged in user in sidebar
+with st.sidebar:
+    st.success(f"Logged in as: {st.session_state.user_email}")
+    if st.button("Logout", key="logout_btn", type="secondary"):
+        st.session_state.user_email = None
+        st.rerun()
+
 
 # --- OpenAI client (new-style) ---
 # If you're using the latest OpenAI python package:
@@ -308,7 +370,6 @@ Rules:
 # -----------------------------
 # Streamlit UI
 # -----------------------------
-st.set_page_config(page_title="Grade 7 Chemistry Quiz", page_icon="🧪", layout="centered")
 
 st.title("🧪 Grade 7 Chemistry Quiz (Cambridge-style)")
 st.caption("One question per page • No skipping • Instant feedback after each answer • Final summary at the end")
