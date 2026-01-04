@@ -17,6 +17,109 @@ MODEL_SUMMARY = os.getenv("OPENAI_MODEL_SUMMARY", "gpt-4o-mini")
 TEMPERATURE_FEEDBACK = float(os.getenv("OPENAI_TEMPERATURE_FEEDBACK", "0.4"))
 TEMPERATURE_SUMMARY = float(os.getenv("OPENAI_TEMPERATURE_SUMMARY", "0.3"))
 
+def use_custom_css():
+    st.markdown("""
+        <!-- CSS Updated -->
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        html, body, .stMarkdown, .stText, p {
+            font-family: 'Inter', sans-serif;
+            color: #111827 !important; /* Force nearly black text */
+        }
+        
+        .stApp {
+            background-color: #f9fafb;
+        }
+
+        /* Improved Sidebar Contrast */
+        [data-testid="stSidebarNav"] span {
+            color: #111827 !important;
+            font-weight: 500;
+        }
+
+        /* Fix Alert Text Contrast (e.g. st.info) */
+        div[data-baseweb="notification"] p, div[data-baseweb="notification"] div {
+            color: #111827 !important;
+        }
+        
+        /* Modern Buttons */
+        .stButton > button {
+            border-radius: 12px;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #d1d5db;
+            color: #1f2937;
+            background-color: white;
+            width: 100%; /* Make buttons fill width */
+        }
+        .stButton > button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #9ca3af;
+            color: #000;
+        }
+        
+        /* Primary Buttons */
+        .stButton > button[kind="primary"] {
+             background-color: #2563eb;
+             color: white;
+             border: none;
+        }
+        
+        /* Clean Headers */
+        h1 {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #111827 !important;
+        }
+        h2, h3 {
+            font-weight: 700;
+            color: #374151 !important;
+        }
+        
+        /* Cards */
+        div[data-testid="stExpander"] {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        /* Custom subject card container styling handled in Home.py via inline CSS, 
+           but we can enhance standard containers here if needed */
+        
+        /* Inputs - Force Light Theme Contrast */
+        .stTextInput > div > div > input, 
+        .stTextArea > div > div > textarea {
+            background-color: #ffffff !important; /* Force white background */
+            color: #111827 !important; /* Force black text */
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            caret-color: #111827; /* Force cursor color */
+        }
+        /* Pholder text color */
+        ::placeholder {
+            color: #6b7280 !important;
+            opacity: 1;
+        }
+        
+        /* Ensure input focus state is visible */
+        .stTextInput > div > div > input:focus, 
+        .stTextArea > div > div > textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 1px #2563eb;
+        }
+        
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: #ffffff;
+            border-right: 1px solid #e5e7eb;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
 # -----------------------------
 # Data model
 # -----------------------------
@@ -28,10 +131,39 @@ class Question:
     prompt: str
     answer_type: str = "text"
 
-def load_questions(filepath: str) -> List[Question]:
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return [Question(**q) for q in data]
+# -----------------------------
+# Data retrieval / persistence
+# -----------------------------
+try:
+    import sheets_db
+    HAS_SHEETS = True
+except ImportError:
+    HAS_SHEETS = False
+
+def load_questions(subject: str = "Chemistry") -> List[Question]:
+    """Loads questions from Google Sheets (if configured) or local JSON."""
+    # Try Sheets first
+    if HAS_SHEETS:
+        try:
+            raw_data = sheets_db.get_questions(subject)
+            if raw_data:
+                return [Question(**q) for q in raw_data]
+        except Exception:
+            # Fallthrough to local file
+            pass
+
+    # Fallback: Local JSON
+    # File naming convention: questions.json (default/legacy) or questions_chemistry.json
+    if subject.lower() == "chemistry":
+        filepath = "questions.json"
+    else:
+        filepath = f"questions_{subject.lower()}.json"
+
+    if os.path.exists(filepath):
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return [Question(**q) for q in data]
+    return []
 
 # -----------------------------
 # Helpers
@@ -59,16 +191,30 @@ def safe_json_loads(text: str) -> Optional[Dict[str, Any]]:
     except Exception:
         return None
 
-def save_feedback_to_history(question: Question, answer: str, feedback: Dict[str, Any]):
-    """Appends feedback to a local JSON file for history tracking."""
+def save_feedback_to_history(question: Question, answer: str, feedback: Dict[str, Any], subject: str = "Chemistry"):
+    """Appends feedback to History (Sheets or local JSON)."""
     record = {
-        "timestamp": datetime.datetime.now().isoformat(),
+        "subject": subject,
         "question_id": question.id,
         "question_topic": question.topic,
         "question_prompt": question.prompt,
         "student_answer": answer,
         "feedback": feedback
     }
+    
+    # Try Sheets
+    if HAS_SHEETS:
+        try:
+            sheets_db.append_history("question", record)
+            return # Success
+        except Exception as e:
+            print(f"Sheets Error: {e}")
+            st.warning(f"Google Sheets Sync Failed: {e}")
+            
+    # Fallback: Local JSON
+    # Add timestamp locally since Sheets adds it automatically
+    record["timestamp"] = datetime.datetime.now().isoformat()
+    record["type"] = "question" # Explicit type for unified structure
     
     history_file = "feedback_history.json"
     history = []
@@ -81,12 +227,21 @@ def save_feedback_to_history(question: Question, answer: str, feedback: Dict[str
             history = []
             
     history.append(record)
-    
     with open(history_file, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 def save_summary_to_history(summary: Dict[str, Any]):
-    """Appends final summary to local JSON file."""
+    """Appends final summary to History (Sheets or local JSON)."""
+    # Try Sheets
+    if HAS_SHEETS:
+        try:
+            sheets_db.append_history("summary", summary)
+            return
+        except Exception as e:
+            print(f"Sheets Error: {e}")
+            st.warning(f"Google Sheets Sync Failed: {e}")
+
+    # Fallback
     record = {
         "timestamp": datetime.datetime.now().isoformat(),
         "type": "summary",
@@ -104,7 +259,6 @@ def save_summary_to_history(summary: Dict[str, Any]):
             history = []
             
     history.append(record)
-    
     with open(history_file, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 

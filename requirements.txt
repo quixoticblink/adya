@@ -2,3 +2,5 @@ streamlit==1.37.1
 openai==2.14.0
 google-auth-oauthlib==1.2.0
 requests==2.32.3
+gspread==6.1.2
+google-auth==2.30.0

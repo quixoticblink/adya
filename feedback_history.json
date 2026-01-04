@@ -117,5 +117,464 @@
         "Exploration of atomic structure, including protons, neutrons, and electrons."
       ]
     }
+  },
+  {
+    "question_id": "A1",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "What creative idea did Democritus have about matter that led to the idea of atoms?",
+    "student_answer": "small atoms",
+    "feedback": {
+      "verdict": "Partly correct",
+      "score_band": "1",
+      "feedback": "Good effort! You identified that Democritus had an idea about small particles. However, it’s important to mention that he proposed that these tiny particles, called atoms, are the basic building blocks of matter. Keep up the good work!",
+      "model_answer": "Democritus had the creative idea that matter is made up of tiny, indivisible particles called atoms, which are too small to see.",
+      "why": "Democritus was a philosopher who lived a long time ago. He suggested that if you keep cutting something in half, you would eventually reach a point where you couldn't cut it anymore. This smallest piece, he called an 'atom', which means 'indivisible' in Greek. He believed that everything around us is made of these tiny atoms, and they come in different shapes and sizes, which determine the properties of matter.",
+      "misconceptions": [
+        "The term 'small atoms' alone does not explain the concept of atoms as indivisible particles."
+      ],
+      "next_steps": [
+        "Review the basic definitions of atoms and matter.",
+        "Explore how Democritus's ideas laid the foundation for modern atomic theory."
+      ],
+      "video_queries": [
+        "What are atoms? Simple explanation for kids",
+        "Democritus and the idea of atoms explained for children",
+        "Introduction to atoms and molecules for Grade 7",
+        "History of the atomic theory for kids",
+        "How small are atoms? Fun facts for students"
+      ],
+      "video_links": [
+        {
+          "query": "What are atoms? Simple explanation for kids",
+          "url": "https://www.youtube.com/results?search_query=What+are+atoms?+Simple+explanation+for+kids"
+        },
+        {
+          "query": "Democritus and the idea of atoms explained for children",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+idea+of+atoms+explained+for+children"
+        },
+        {
+          "query": "Introduction to atoms and molecules for Grade 7",
+          "url": "https://www.youtube.com/results?search_query=Introduction+to+atoms+and+molecules+for+Grade+7"
+        },
+        {
+          "query": "History of the atomic theory for kids",
+          "url": "https://www.youtube.com/results?search_query=History+of+the+atomic+theory+for+kids"
+        },
+        {
+          "query": "How small are atoms? Fun facts for students",
+          "url": "https://www.youtube.com/results?search_query=How+small+are+atoms?+Fun+facts+for+students"
+        }
+      ]
+    },
+    "timestamp": "2026-01-03T19:33:10.368946",
+    "type": "question"
+  },
+  {
+    "question_id": "A1",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "What creative idea did Democritus have about matter that led to the idea of atoms?",
+    "student_answer": "matter when it is cutninto smallernpeces",
+    "feedback": {
+      "verdict": "Partly correct",
+      "score_band": "0-1",
+      "feedback": "You've made a good start by mentioning that matter can be cut into smaller pieces. However, Democritus' idea was more specific. Keep working on understanding the concept of atoms!",
+      "model_answer": "Democritus proposed that matter is made up of tiny, indivisible particles called atoms, which cannot be divided any further.",
+      "why": "Democritus was a philosopher who lived a long time ago. He suggested that if you keep cutting matter into smaller and smaller pieces, you would eventually reach a point where you couldn't cut it anymore. He called these tiny pieces 'atoms,' which means 'indivisible' in Greek. This idea was important because it introduced the concept that all matter is made of these small particles, even though he didn't have the scientific tools we have today to prove it.",
+      "misconceptions": [
+        "The idea of cutting matter into smaller pieces does not capture the full concept of atoms, which are specific types of particles that cannot be divided further."
+      ],
+      "next_steps": [
+        "Review the definition of atoms and their significance in matter.",
+        "Explore the historical context of Democritus' ideas and how they relate to modern atomic theory."
+      ],
+      "video_queries": [
+        "Democritus and the idea of atoms explained for kids",
+        "What are atoms? A simple explanation",
+        "History of atomic theory for beginners",
+        "How atoms make up matter",
+        "Democritus and the first atomic theory"
+      ],
+      "video_links": [
+        {
+          "query": "Democritus and the idea of atoms explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+idea+of+atoms+explained+for+kids"
+        },
+        {
+          "query": "What are atoms? A simple explanation",
+          "url": "https://www.youtube.com/results?search_query=What+are+atoms?+A+simple+explanation"
+        },
+        {
+          "query": "History of atomic theory for beginners",
+          "url": "https://www.youtube.com/results?search_query=History+of+atomic+theory+for+beginners"
+        },
+        {
+          "query": "How atoms make up matter",
+          "url": "https://www.youtube.com/results?search_query=How+atoms+make+up+matter"
+        },
+        {
+          "query": "Democritus and the first atomic theory",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+first+atomic+theory"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T10:10:23.036251",
+    "type": "question"
+  },
+  {
+    "question_id": "A2",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "In Rutherford’s experiment, what did he fire at a thin sheet of gold foil?",
+    "student_answer": "alpha particles",
+    "feedback": {
+      "verdict": "Correct",
+      "score_band": "1",
+      "feedback": "Great job! You correctly identified that Rutherford fired alpha particles at the gold foil. This was a key part of his experiment that helped us understand atomic structure better. Keep up the good work!",
+      "model_answer": "In Rutherford’s experiment, he fired alpha particles at a thin sheet of gold foil.",
+      "why": "In Rutherford's experiment, he used alpha particles, which are positively charged particles emitted from radioactive materials. When he directed these particles at a very thin sheet of gold foil, he was able to observe how they interacted with the atoms in the foil. Most particles passed straight through, but some were deflected at large angles. This led him to conclude that atoms have a small, dense nucleus at their center, surrounded by mostly empty space, which was a groundbreaking discovery in understanding atomic structure.",
+      "misconceptions": [],
+      "next_steps": [
+        "Review the structure of an atom, focusing on protons, neutrons, and electrons.",
+        "Explore how Rutherford's findings changed the atomic model.",
+        "Practice explaining the significance of the gold foil experiment in your own words."
+      ],
+      "video_queries": [
+        "Rutherford gold foil experiment explained for kids",
+        "What are alpha particles?",
+        "How did Rutherford discover the nucleus?",
+        "Atomic structure basics for beginners",
+        "Rutherford experiment results and significance"
+      ],
+      "video_links": [
+        {
+          "query": "Rutherford gold foil experiment explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Rutherford+gold+foil+experiment+explained+for+kids"
+        },
+        {
+          "query": "What are alpha particles?",
+          "url": "https://www.youtube.com/results?search_query=What+are+alpha+particles?"
+        },
+        {
+          "query": "How did Rutherford discover the nucleus?",
+          "url": "https://www.youtube.com/results?search_query=How+did+Rutherford+discover+the+nucleus?"
+        },
+        {
+          "query": "Atomic structure basics for beginners",
+          "url": "https://www.youtube.com/results?search_query=Atomic+structure+basics+for+beginners"
+        },
+        {
+          "query": "Rutherford experiment results and significance",
+          "url": "https://www.youtube.com/results?search_query=Rutherford+experiment+results+and+significance"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T10:19:11.323627",
+    "type": "question"
+  },
+  {
+    "timestamp": "2026-01-04T10:24:33.369975",
+    "type": "summary",
+    "content": {
+      "overall_summary": "The student shows a good understanding of some key concepts in atomic structure, particularly in identifying Rutherford's use of alpha particles. However, their response regarding Democritus indicates a lack of clarity about the definition and significance of atoms. Continued focus on these foundational ideas will strengthen their grasp of atomic theory.",
+      "strengths": [
+        "Correctly identified that Rutherford fired alpha particles in his experiment.",
+        "Demonstrated an understanding of the importance of Rutherford's findings."
+      ],
+      "gaps": [
+        "Lacks a complete understanding of Democritus' concept of atoms and their indivisible nature.",
+        "Needs to clarify the historical context and significance of atomic theory."
+      ],
+      "misconceptions_to_fix": [
+        "Confuses the general idea of cutting matter with the specific concept of atoms as indivisible particles."
+      ],
+      "key_learning_points": [
+        "Atoms are the smallest units of matter that cannot be divided further.",
+        "Rutherford's gold foil experiment revealed the existence of a nucleus within atoms."
+      ],
+      "recommended_next_topics": [
+        "The modern atomic model and its components (protons, neutrons, electrons).",
+        "Historical development of atomic theory from Democritus to Rutherford.",
+        "Further exploration of atomic structure and its implications in chemistry."
+      ]
+    }
+  },
+  {
+    "question_id": "A1",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "What creative idea did Democritus have about matter that led to the idea of atoms?",
+    "student_answer": "small particles",
+    "feedback": {
+      "verdict": "Partly correct",
+      "score_band": "1",
+      "feedback": "Great job identifying that Democritus thought of matter as being made of small particles! However, it would be even better to mention that he called these particles 'atoms' and believed they were indivisible. Keep up the good work!",
+      "model_answer": "Democritus had the creative idea that matter is made up of tiny, indivisible particles called atoms.",
+      "why": "Democritus was a Greek philosopher who proposed that everything around us is made up of very small particles he named 'atoms.' He suggested that these atoms are indivisible, meaning they cannot be broken down into smaller pieces. This idea was revolutionary because it helped people start to think about the nature of matter in a scientific way. While he didn't have the technology to prove it, his concept laid the groundwork for modern atomic theory.",
+      "misconceptions": [
+        "The term 'small particles' is too vague and doesn't accurately represent Democritus's idea of 'atoms'."
+      ],
+      "next_steps": [
+        "Review the definition of atoms and their significance in the structure of matter.",
+        "Explore how Democritus's ideas compare to modern atomic theory."
+      ],
+      "video_queries": [
+        "Democritus and the concept of atoms for kids",
+        "Introduction to atoms and molecules for beginners",
+        "History of atomic theory explained simply"
+      ],
+      "video_links": [
+        {
+          "query": "Democritus and the concept of atoms for kids",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+concept+of+atoms+for+kids"
+        },
+        {
+          "query": "Introduction to atoms and molecules for beginners",
+          "url": "https://www.youtube.com/results?search_query=Introduction+to+atoms+and+molecules+for+beginners"
+        },
+        {
+          "query": "History of atomic theory explained simply",
+          "url": "https://www.youtube.com/results?search_query=History+of+atomic+theory+explained+simply"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T14:43:33.702051",
+    "type": "question"
+  },
+  {
+    "question_id": "A2",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "In Rutherford’s experiment, what did he fire at a thin sheet of gold foil?",
+    "student_answer": "I don't know",
+    "feedback": {
+      "verdict": "Incorrect",
+      "score_band": "0",
+      "feedback": "It's okay not to know the answer! Rutherford's experiment is an important part of understanding atoms. Let's review it together to help you remember what he fired at the gold foil.",
+      "model_answer": "Rutherford fired alpha particles at a thin sheet of gold foil in his experiment.",
+      "why": "In Rutherford's experiment, he used alpha particles, which are positively charged particles emitted from certain radioactive materials. He directed these particles at a very thin sheet of gold foil. By observing how the particles scattered after hitting the foil, he was able to conclude that atoms have a small, dense nucleus at their center, which is positively charged. This was a key discovery in understanding the structure of atoms.",
+      "misconceptions": [
+        "Alpha particles are not the same as electrons; they are much heavier and positively charged.",
+        "Not all experiments involve firing particles; some experiments may use light or other methods."
+      ],
+      "next_steps": [
+        "Review the key components of Rutherford's experiment, including what he used and what he discovered.",
+        "Look at diagrams of atomic structure to visualize where the nucleus and electrons are located."
+      ],
+      "video_queries": [
+        "Rutherford gold foil experiment explained for kids",
+        "What are alpha particles?",
+        "Structure of an atom for beginners",
+        "Rutherford's experiment and atomic theory",
+        "How did Rutherford discover the nucleus?"
+      ],
+      "video_links": [
+        {
+          "query": "Rutherford gold foil experiment explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Rutherford+gold+foil+experiment+explained+for+kids"
+        },
+        {
+          "query": "What are alpha particles?",
+          "url": "https://www.youtube.com/results?search_query=What+are+alpha+particles?"
+        },
+        {
+          "query": "Structure of an atom for beginners",
+          "url": "https://www.youtube.com/results?search_query=Structure+of+an+atom+for+beginners"
+        },
+        {
+          "query": "Rutherford's experiment and atomic theory",
+          "url": "https://www.youtube.com/results?search_query=Rutherford's+experiment+and+atomic+theory"
+        },
+        {
+          "query": "How did Rutherford discover the nucleus?",
+          "url": "https://www.youtube.com/results?search_query=How+did+Rutherford+discover+the+nucleus?"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T14:43:54.720488",
+    "type": "question"
+  },
+  {
+    "timestamp": "2026-01-04T14:44:03.352840",
+    "type": "summary",
+    "content": {
+      "overall_summary": "The student demonstrated a basic understanding of atomic theory but struggled with specific details. They correctly identified Democritus's idea of matter being made of small particles but missed the term 'atoms' and the concept of indivisibility. They were unsure about Rutherford's experiment, indicating a need for further review.",
+      "strengths": [
+        "Identified that Democritus thought of matter as being made of small particles."
+      ],
+      "gaps": [
+        "Lacks knowledge about the specific particles used in Rutherford's experiment.",
+        "Needs to understand the significance of the term 'atoms' and the concept of indivisibility."
+      ],
+      "misconceptions_to_fix": [
+        "Confuses the general idea of 'small particles' with the specific term 'atoms'.",
+        "Unfamiliar with the details of Rutherford's experiment and what alpha particles are."
+      ],
+      "key_learning_points": [
+        "The definition and significance of atoms as indivisible particles.",
+        "The details of Rutherford's experiment, including the use of alpha particles and its implications for atomic structure."
+      ],
+      "recommended_next_topics": [
+        "Review of atomic theory and the contributions of early scientists like Democritus and Rutherford.",
+        "Exploration of atomic structure, including the nucleus and electrons."
+      ]
+    }
+  },
+  {
+    "question_id": "A1",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "What creative idea did Democritus have about matter that led to the idea of atoms?",
+    "student_answer": "small particles",
+    "feedback": {
+      "verdict": "Partly correct",
+      "score_band": "0-1",
+      "feedback": "Great effort! You mentioned 'small particles,' which is part of Democritus's idea about matter. However, it's important to specify that he proposed these small particles are indivisible and called them 'atoms.' Keep up the good work!",
+      "model_answer": "Democritus proposed that matter is made up of tiny, indivisible particles called atoms, which are the smallest units of matter.",
+      "why": "Democritus was a philosopher who lived a long time ago, around 400 BC. He suggested that if you keep cutting something in half, you would eventually reach a point where you can't cut it anymore. This smallest piece he called an 'atom,' which means 'indivisible' in Greek. He believed that these atoms were the building blocks of all matter, and that everything around us is made up of different types of atoms that vary in shape and size.",
+      "misconceptions": [
+        "Atoms are not just small particles; they are specific types of particles that cannot be divided further."
+      ],
+      "next_steps": [
+        "Review the concept of atoms and their indivisibility.",
+        "Explore how different atoms combine to form molecules."
+      ],
+      "video_queries": [
+        "Democritus and the idea of atoms explained for kids",
+        "What are atoms? Simple explanation for beginners",
+        "History of atomic theory for Grade 7 students"
+      ],
+      "video_links": [
+        {
+          "query": "Democritus and the idea of atoms explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+idea+of+atoms+explained+for+kids"
+        },
+        {
+          "query": "What are atoms? Simple explanation for beginners",
+          "url": "https://www.youtube.com/results?search_query=What+are+atoms?+Simple+explanation+for+beginners"
+        },
+        {
+          "query": "History of atomic theory for Grade 7 students",
+          "url": "https://www.youtube.com/results?search_query=History+of+atomic+theory+for+Grade+7+students"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T14:45:29.481674",
+    "type": "question"
+  },
+  {
+    "question_id": "A1",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "What creative idea did Democritus have about matter that led to the idea of atoms?",
+    "student_answer": "small atoms",
+    "feedback": {
+      "verdict": "Partly correct",
+      "score_band": "1",
+      "feedback": "Good effort! You mentioned 'small atoms', which is on the right track. However, Democritus's main idea was that all matter is made up of tiny, indivisible particles he called 'atoms'. Keep exploring this concept!",
+      "model_answer": "Democritus proposed that all matter is made up of tiny, indivisible particles called 'atoms', which are too small to be seen.",
+      "why": "Democritus was a philosopher who lived around 400 BC. He suggested that if you keep dividing matter into smaller and smaller pieces, you would eventually reach a point where you could not divide it anymore. He called these tiny pieces 'atoms', which means 'indivisible' in Greek. This idea was revolutionary because it introduced the concept that matter is not continuous but made up of discrete particles. Understanding this helps us grasp the foundation of chemistry today.",
+      "misconceptions": [
+        "Atoms are not just small; they are fundamental building blocks of matter that cannot be divided further."
+      ],
+      "next_steps": [
+        "Review the definition of atoms and their significance in matter.",
+        "Explore how Democritus's ideas compare to modern atomic theory."
+      ],
+      "video_queries": [
+        "What are atoms? A simple explanation for kids",
+        "Democritus and the atomic theory explained for kids",
+        "History of the atom: Democritus to Dalton"
+      ],
+      "video_links": [
+        {
+          "query": "What are atoms? A simple explanation for kids",
+          "url": "https://www.youtube.com/results?search_query=What+are+atoms?+A+simple+explanation+for+kids"
+        },
+        {
+          "query": "Democritus and the atomic theory explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Democritus+and+the+atomic+theory+explained+for+kids"
+        },
+        {
+          "query": "History of the atom: Democritus to Dalton",
+          "url": "https://www.youtube.com/results?search_query=History+of+the+atom:+Democritus+to+Dalton"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T14:48:40.336238",
+    "type": "question"
+  },
+  {
+    "question_id": "A2",
+    "question_topic": "Structure of atoms",
+    "question_prompt": "In Rutherford’s experiment, what did he fire at a thin sheet of gold foil?",
+    "student_answer": "I don't know",
+    "feedback": {
+      "verdict": "Incorrect",
+      "score_band": "0",
+      "feedback": "It's okay not to know the answer right now! Let's work together to understand Rutherford's experiment better. Remember, asking questions is a great way to learn.",
+      "model_answer": "Rutherford fired alpha particles at a thin sheet of gold foil during his experiment.",
+      "why": "In Rutherford's experiment, he used alpha particles, which are positively charged particles emitted from certain types of radioactive materials. He directed these particles at a very thin sheet of gold foil. The purpose was to see how these particles would interact with the atoms in the gold. Most of the particles passed through, but some were deflected at large angles, leading to the discovery that atoms have a small, dense nucleus at their center. This was a key moment in understanding atomic structure.",
+      "misconceptions": [
+        "Students might think that all particles are the same or that Rutherford used something other than alpha particles."
+      ],
+      "next_steps": [
+        "Review the basic structure of atoms, including protons, neutrons, and electrons.",
+        "Look into the significance of Rutherford's findings and how they changed our understanding of atomic structure."
+      ],
+      "video_queries": [
+        "Rutherford gold foil experiment explained for kids",
+        "What are alpha particles?",
+        "Structure of an atom for beginners",
+        "How Rutherford discovered the nucleus",
+        "Rutherford experiment animation"
+      ],
+      "video_links": [
+        {
+          "query": "Rutherford gold foil experiment explained for kids",
+          "url": "https://www.youtube.com/results?search_query=Rutherford+gold+foil+experiment+explained+for+kids"
+        },
+        {
+          "query": "What are alpha particles?",
+          "url": "https://www.youtube.com/results?search_query=What+are+alpha+particles?"
+        },
+        {
+          "query": "Structure of an atom for beginners",
+          "url": "https://www.youtube.com/results?search_query=Structure+of+an+atom+for+beginners"
+        },
+        {
+          "query": "How Rutherford discovered the nucleus",
+          "url": "https://www.youtube.com/results?search_query=How+Rutherford+discovered+the+nucleus"
+        },
+        {
+          "query": "Rutherford experiment animation",
+          "url": "https://www.youtube.com/results?search_query=Rutherford+experiment+animation"
+        }
+      ]
+    },
+    "timestamp": "2026-01-04T14:48:59.152990",
+    "type": "question"
+  },
+  {
+    "timestamp": "2026-01-04T14:49:07.020653",
+    "type": "summary",
+    "content": {
+      "overall_summary": "The student shows a basic understanding of atomic structure but has gaps in knowledge about key experiments that shaped atomic theory. They provided a partially correct answer regarding Democritus but were unsure about Rutherford's experiment. This indicates a need for further study in both historical and foundational concepts of atomic structure.",
+      "strengths": [
+        "Demonstrated an understanding of the concept of atoms as small particles.",
+        "Engaged with the topic by attempting to answer questions."
+      ],
+      "gaps": [
+        "Lacks knowledge about Rutherford's experiment and the use of alpha particles.",
+        "Needs a clearer understanding of the historical development of atomic theory."
+      ],
+      "misconceptions_to_fix": [
+        "May not fully grasp that atoms are indivisible and fundamental building blocks of matter.",
+        "Uncertainty about the specific particles used in significant experiments like Rutherford's."
+      ],
+      "key_learning_points": [
+        "The definition and significance of atoms in matter.",
+        "The details of Rutherford's gold foil experiment and its implications for atomic structure."
+      ],
+      "recommended_next_topics": [
+        "Basic structure of atoms, including protons, neutrons, and electrons.",
+        "Detailed study of Rutherford's experiment and its impact on atomic theory.",
+        "Comparison of early atomic theories, including those of Democritus and Dalton."
+      ]
+    }
   }
 ]

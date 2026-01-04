@@ -3,7 +3,9 @@ import json
 import os
 import datetime
 
+import utils
 st.set_page_config(page_title="Feedback History", page_icon="📜", layout="wide")
+utils.use_custom_css()
 
 import auth
 if not auth.is_authenticated():
@@ -17,24 +19,53 @@ auth.check_admin_password()
 st.title("📜 Feedback History")
 st.caption("View past answers and AI feedback.")
 
+try:
+    import sheets_db
+    HAS_SHEETS = True
+except ImportError:
+    HAS_SHEETS = False
+
 HISTORY_FILE = "feedback_history.json"
 
-if not os.path.exists(HISTORY_FILE):
-    st.info("No history found yet. completes some questions to see them here!")
-    st.stop()
-
-try:
-    with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-        history = json.load(f)
-        # Reverse to show newest first
+if HAS_SHEETS:
+    try:
+        history = sheets_db.get_history()
         history.reverse()
-except Exception as e:
-    st.error(f"Error reading history file: {e}")
-    st.stop()
+    except Exception:
+        # Fallback empty list or local file if you prefer mixed mode
+        # For now, let's fallback to local file just in case
+        history = []
+        if os.path.exists(HISTORY_FILE):
+             with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                history = json.load(f)
+                history.reverse()
+else:
+    if not os.path.exists(HISTORY_FILE):
+        st.info("No history found yet. completes some questions to see them here!")
+        st.stop()
+
+    try:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+            history = json.load(f)
+            history.reverse()
+    except Exception as e:
+        st.error(f"Error reading history file: {e}")
+        st.stop()
 
 # --- Delete Helper ---
 def delete_record(target_ts: str):
     """Deletes a record with the matching timestamp from the history file."""
+    if HAS_SHEETS:
+        try:
+            sheets_db.delete_history_entry(target_ts)
+            st.success("Entry deleted from Sheets.")
+            st.rerun()
+            return
+        except Exception as e:
+            # Maybe failed to connect, try local? No, if configured, assume sheets.
+            st.error(f"Failed to delete from Sheets: {e}")
+            return
+
     if not os.path.exists(HISTORY_FILE):
         return
         
@@ -54,7 +85,15 @@ def delete_record(target_ts: str):
         st.error(f"Failed to delete: {e}")
 
 # Filter/Search
-search = st.text_input("🔍 Search by topic or answer content", "")
+SUBJECTS = ["All", "Chemistry", "Biology", "Physics", "Geography", "History"]
+
+col_filter, col_search = st.columns([1, 3])
+
+with col_filter:
+    filter_subject = st.selectbox("Subject Filter", SUBJECTS)
+
+with col_search:
+    search = st.text_input("Search text", placeholder="Type to search topics or answers...")
 
 for item in history:
     # Safe timestamp parsing
@@ -67,6 +106,11 @@ for item in history:
 
     # Check type
     record_type = item.get("type", "question")
+    item_subject = item.get("subject", "Chemistry") # Assume legacy items are Chemistry
+
+    # 1. Subject Filter
+    if filter_subject != "All" and item_subject != filter_subject:
+        continue
 
     if record_type == "summary":
         # --- Summary Card ---

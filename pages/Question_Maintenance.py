@@ -3,7 +3,9 @@ import json
 import os
 import pandas as pd
 
+import utils
 st.set_page_config(page_title="Question Maintenance", page_icon="🛠️", layout="wide")
+utils.use_custom_css()
 
 import auth
 if not auth.is_authenticated():
@@ -14,12 +16,30 @@ if not auth.is_authenticated():
 # Admin Password Guard
 auth.check_admin_password()
 
+SUBJECTS = ["Chemistry", "Biology", "Physics", "Geography", "History"]
+
 st.title("🛠️ Question Maintenance")
 st.caption("View and update the quiz questions.")
 
-QUESTIONS_FILE = "questions.json"
+selected_subject = st.selectbox("Select Subject", SUBJECTS)
+
+QUESTIONS_FILE = "questions.json" if selected_subject == "Chemistry" else f"questions_{selected_subject.lower()}.json"
+
+try:
+    import sheets_db
+    HAS_SHEETS = True
+except ImportError:
+    HAS_SHEETS = False
 
 def load_questions_raw():
+    # Try Sheets first
+    if HAS_SHEETS:
+        try:
+            return sheets_db.get_questions(selected_subject)
+        except:
+            pass
+
+    # Fallback
     if not os.path.exists(QUESTIONS_FILE):
         return []
     try:
@@ -30,7 +50,7 @@ def load_questions_raw():
         return []
 
 # --- Current Questions ---
-st.subheader("Current Questions")
+st.subheader(f"Current Questions ({selected_subject})")
 questions = load_questions_raw()
 
 if questions:
@@ -84,12 +104,29 @@ if uploaded_file is not None:
             st.dataframe(new_df.head(), use_container_width=True)
             
             if st.button("🚨 Overwrite Questions File", type="primary"):
-                # Ensure marks are integers if possible, handle cleanup
-                # (JSON serialization handles basics, but let's ensure types if needed)
-                with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
-                    json.dump(new_data, f, ensure_ascii=False, indent=2)
-                st.toast("Questions updated successfully!", icon="✅")
-                st.session_state.clear() # Clear cache to force reload
+                if HAS_SHEETS:
+                    try:
+                        sheets_db.save_questions(selected_subject, new_data)
+                        st.toast(f"Questions for {selected_subject} updated in Google Sheets!", icon="✅")
+                    except Exception as e:
+                        st.error(f"Failed to update Sheets: {e}")
+                        st.stop()
+                else:
+                    # Local update
+                    with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
+                        json.dump(new_data, f, ensure_ascii=False, indent=2)
+                    st.toast("Questions updated locally!", icon="✅")
+
+                # Preserve Auth State
+                saved_email = st.session_state.get("user_email")
+                saved_admin = st.session_state.get("admin_unlocked")
+                
+                st.session_state.clear() # Clear cache
+                
+                # Restore Auth State
+                if saved_email: st.session_state.user_email = saved_email
+                if saved_admin: st.session_state.admin_unlocked = saved_admin
+                
                 st.rerun()
                     
     except Exception as e:
