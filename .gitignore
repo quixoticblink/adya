@@ -18,3 +18,4 @@ venv.bak/
 .vscode/
 .idea/
 .DS_Store
+questions/adya-*.json

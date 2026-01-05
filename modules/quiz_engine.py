@@ -61,6 +61,53 @@ def run_quiz(subject: str):
         st.session_state[f"{pfx}qa_log"] = []
     if f"{pfx}final_summary" not in st.session_state:
         st.session_state[f"{pfx}final_summary"] = None
+    if f"{pfx}started" not in st.session_state:
+        st.session_state[f"{pfx}started"] = False
+
+    # -----------------------------
+    # Resume / Start Logic
+    # -----------------------------
+    if not st.session_state[f"{pfx}started"]:
+        # Check for history
+        user_email = st.session_state.get("user_email")
+        
+        # Only check if we are at the beginning
+        if st.session_state[f"{pfx}idx"] == 0:
+            with st.spinner("Checking for previous progress..."):
+                last_idx, saved_ans, saved_fb, saved_log = utils.get_user_progress(user_email, subject, QUESTIONS)
+            
+            # If we found progress and it's not fully complete (or even if it is, maybe offer restart?)
+            if last_idx > -1:
+                progress_pct = int(((last_idx + 1) / len(QUESTIONS)) * 100)
+                st.info(f"Welcome back! We found previous progress: {last_idx + 1}/{len(QUESTIONS)} questions completed ({progress_pct}%).")
+                
+                c1, c2 = st.columns(2)
+                with c1:
+                    resume_label = "▶️ Resume Quiz" if last_idx < len(QUESTIONS) - 1 else "📊 View Results"
+                    if st.button(resume_label, type="primary", use_container_width=True):
+                        st.session_state[f"{pfx}idx"] = last_idx + 1
+                        st.session_state[f"{pfx}answers"] = saved_ans
+                        st.session_state[f"{pfx}feedback"] = saved_fb
+                        st.session_state[f"{pfx}qa_log"] = saved_log
+                        st.session_state[f"{pfx}started"] = True
+                        st.rerun()
+                with c2:
+                    if st.button("🔄 Start Fresh", use_container_width=True):
+                        # Clear state
+                        st.session_state[f"{pfx}idx"] = 0
+                        st.session_state[f"{pfx}answers"] = {}
+                        st.session_state[f"{pfx}feedback"] = {}
+                        st.session_state[f"{pfx}qa_log"] = []
+                        st.session_state[f"{pfx}final_summary"] = None
+                        st.session_state[f"{pfx}started"] = True
+                        st.rerun()
+                st.stop() # Wait for choice
+            else:
+                 # No progress, auto start
+                 st.session_state[f"{pfx}started"] = True
+        else:
+             # Already mid-session but flag wasn't set?
+             st.session_state[f"{pfx}started"] = True
 
     # Getters/Setters using prefix
     idx = st.session_state[f"{pfx}idx"]
@@ -179,10 +226,18 @@ def run_quiz(subject: str):
 
     ans_clean = (ans or "").strip()
 
-    colA, colB = st.columns([1, 1])
-    with colA:
+    # Navigation & Actions
+    col_nav1, col_nav2, col_nav3 = st.columns([1, 2, 1])
+    
+    with col_nav1:
+        if idx > 0:
+            if st.button("← Back", key=f"{pfx}back_{qid}", use_container_width=True):
+                st.session_state[f"{pfx}idx"] -= 1
+                st.rerun()
+
+    with col_nav2:
         submit_disabled = (ans_clean == "") or already_has_feedback(qid)
-        if st.button("Submit answer", type="primary", disabled=submit_disabled, key=f"{pfx}sub_{qid}"):
+        if st.button("Submit answer", type="primary", disabled=submit_disabled, key=f"{pfx}sub_{qid}", use_container_width=True):
             st.session_state[f"{pfx}answers"][qid] = ans_clean
             with st.spinner("Getting feedback..."):
                 try:
@@ -198,16 +253,33 @@ def run_quiz(subject: str):
                     st.stop()
             st.rerun()
 
-    with colB:
+    with col_nav3:
         next_disabled = not already_has_feedback(qid)
-        if st.button("Next question →", disabled=next_disabled, key=f"{pfx}next_{qid}"):
+        if st.button("Next →", disabled=next_disabled, key=f"{pfx}next_{qid}", use_container_width=True):
             st.session_state[f"{pfx}idx"] += 1
             st.rerun()
 
     if already_has_feedback(qid):
         fb = st.session_state[f"{pfx}feedback"][qid]
         st.divider()
-        st.subheader("🧾 Feedback")
+        
+        # Header + Redo
+        rb_col1, rb_col2 = st.columns([5, 1])
+        with rb_col1:
+            st.subheader("🧾 Feedback")
+        with rb_col2:
+            if st.button("🔄 Redo", key=f"{pfx}redo_{qid}", help="Clear your answer and try again"):
+                # Clear state for this question
+                if qid in st.session_state[f"{pfx}answers"]:
+                    del st.session_state[f"{pfx}answers"][qid]
+                if qid in st.session_state[f"{pfx}feedback"]:
+                    del st.session_state[f"{pfx}feedback"][qid]
+                # Remove from log
+                st.session_state[f"{pfx}qa_log"] = [
+                    x for x in st.session_state[f"{pfx}qa_log"] if x.get("id") != qid
+                ]
+                st.rerun()
+
         st.markdown(f"**Verdict:** {fb.get('verdict','—')}  \n**Score:** {fb.get('score_band','—')} / {q.marks}")
         st.markdown("**Quick feedback**"); st.write(fb.get("feedback", ""))
         st.markdown("**Model answer**"); st.info(fb.get("model_answer", ""))

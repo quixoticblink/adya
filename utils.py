@@ -191,6 +191,83 @@ def safe_json_loads(text: str) -> Optional[Dict[str, Any]]:
     except Exception:
         return None
 
+def get_user_progress(user_email: str, subject: str, questions: List[Question]):
+    """
+    Reconstructs quiz state from history for a specific user and subject.
+    Returns: (last_index, answers, feedback, qa_log)
+    """
+    # 1. Fetch History
+    history = []
+    if HAS_SHEETS:
+        try:
+            history = sheets_db.get_history()
+        except:
+            pass
+    
+    if not history:
+        # Local fallback
+        h_file = "feedback_history.json"
+        if os.path.exists(h_file):
+            try:
+                with open(h_file, "r", encoding="utf-8") as f:
+                    history = json.load(f)
+            except:
+                pass
+
+    # 2. Filter & Reconstruct
+    answers = {}
+    feedback_dict = {}
+    qa_log = []
+    
+    # Sort history by timestamp to ensure chronological order
+    history.sort(key=lambda x: x.get("timestamp", ""))
+
+    for item in history:
+        # Filter by user
+        item_email = item.get("email")
+        if user_email and item_email and item_email != user_email:
+            continue
+            
+        # Filter by subject
+        if item.get("subject") != subject:
+            continue
+            
+        # Filter by type
+        if item.get("type") != "question":
+            continue
+            
+        qid = item.get("question_id")
+        if not qid:
+            continue
+            
+        # Update state (latest entry wins due to sort)
+        answers[qid] = item.get("student_answer", "")
+        feedback_dict[qid] = item.get("feedback", {})
+        
+        # We append to log, but we might want to dedup if user answered same q twice?
+        # For 'Resume', we usually want the LATEST state. 
+        # But qa_log usually tracks the history of the session. 
+        # Let's just rebuild the log based on the unique latest answers to avoid duplicates in the summary.
+        
+    # Rebuild clean log based on final answers
+    clean_log = []
+    q_map = {q.id: q for q in questions}
+    
+    last_index = -1
+    for i, q in enumerate(questions):
+        if q.id in answers:
+            last_index = i
+            clean_log.append({
+                 "id": q.id,
+                 "topic": q.topic,
+                 "marks": q.marks,
+                 "question": q.prompt,
+                 "student_answer": answers[q.id],
+                 "feedback": feedback_dict[q.id]
+            })
+
+    return last_index, answers, feedback_dict, clean_log
+
 def save_feedback_to_history(question: Question, answer: str, feedback: Dict[str, Any], subject: str = "Chemistry"):
     """Appends feedback to History (Sheets or local JSON)."""
     record = {

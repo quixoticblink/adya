@@ -1,0 +1,40 @@
+id,topic,marks,prompt
+POP1,Population,1,Define population distribution.
+POP2,Population,1,Define population density.
+POP3,Population,2,State two factors that affect population distribution.
+POP4,Population,3,Explain how relief (mountains/flat land) can affect where people live. Give one example.
+POP5,Population,3,Explain how climate can affect population distribution. Give one example.
+POP6,Population,3,"Explain two human factors that attract people to live in a place (e.g., jobs, services, transport)."
+POP7,Population Transition,2,What is meant by population transition?
+POP8,Population Transition,4,Describe what happens to birth rate and death rate in the Demographic Transition Model (DTM) from Stage 1 to Stage 4.
+POP9,Population Transition,4,A country has a very wide base in its population pyramid. What does this suggest about (a) birth rate (b) life expectancy (c) future growth?
+MIG1,Migration: Migrants to the UK,2,Define migration and state the difference between internal and international migration.
+MIG2,Migration: Migrants to the UK,3,Give two push factors that might cause people to leave their home country to move to the UK.
+MIG3,Migration: Migrants to the UK,3,Give two pull factors that might attract migrants to the UK.
+MIG4,Effects of migration,4,"Explain two effects of migration on the destination country (e.g., the UK)."
+MIG5,Effects of migration,4,Explain two effects of migration on the country of origin (the place migrants leave).
+IND1,India: Main physical features,2,"Name four main physical features/regions of India (e.g., Himalayas, Indo-Gangetic Plain, Deccan Plateau, Thar Desert, coastal plains)."
+IND2,India: Main physical features,4,Explain how the Himalayas affect India’s climate and rivers. Give two explained points.
+IND3,India: Demographic features,2,"State two demographic features that can be used to describe a country (e.g., population size, density, growth rate, age structure, literacy, life expectancy)."
+IND4,India: Demographic features,4,Explain why India has very high population density in some areas but low density in others. Use at least one physical and one human reason.
+IND5,Urbanisation in Mumbai,2,Define urbanisation.
+IND6,Urbanisation in Mumbai,4,Explain two reasons why Mumbai has grown rapidly. (Include one economic reason.)
+IND7,Urbanisation in Mumbai,4,"Describe three challenges caused by rapid urbanisation in Mumbai (e.g., housing, transport, pollution, sanitation, jobs)."
+IND8,Urbanisation in Mumbai,4,Suggest two ways the government or communities could improve living conditions in informal settlements (slums) in Mumbai. Explain how each helps.
+IND9,Life in rural India,4,"Describe what life is like in a rural area in India. Include two points about work and two points about services (e.g., schools, healthcare, water, transport)."
+IND10,Life in rural India,4,Compare life in rural India and life in Mumbai. Give two differences and one similarity.
+WI1,World issues: Climate change,2,What is climate change? Name one greenhouse gas.
+WI2,World issues: Climate change,4,Explain three effects of climate change on people and environments.
+WI3,World issues: Alternative energy,2,Name four alternative/renewable energy sources.
+WI4,World issues: Alternative energy,4,"Choose one renewable energy source (e.g., solar or wind). Explain two advantages and two disadvantages."
+WI5,World issues: Water problem,2,What is water scarcity? Give one physical cause and one human cause.
+WI6,World issues: Water problem,4,Explain three reasons why some places have water problems. Include at least one reason linked to climate and one linked to people.
+WI7,World issues: Water problem,4,Suggest three solutions to reduce water problems in a city or region. Explain how each solution helps.
+WI8,World issues: Food (too little or too much),3,Define food insecurity and give two causes.
+WI9,World issues: Food (too little or too much),4,Explain two problems caused by having 'too much' food (overconsumption). Suggest one way to reduce each problem.
+WI10,World issues: Poverty,2,Define poverty and state one way it can be measured.
+WI11,World issues: Poverty,4,"Suggest three ways to reduce poverty in a low-income country. For each, explain how it helps people."
+CC1,Changing Communities (Analysis & Collaboration),2,What is a community? Give one example of a community you belong to.
+CC2,Changing Communities (Analysis & Collaboration),4,A new shopping mall is built near a housing estate. Describe two positive and two negative impacts on the local community.
+CC3,Changing Communities (Analysis & Collaboration),4,"A town’s population grows quickly because of migration. Suggest three actions the town could take to manage change (e.g., housing, schools, healthcare, transport) and explain why each action helps."
+CC4,Changing Communities (Analysis & Collaboration),4,Design three survey questions you could ask residents to find out how a community is changing. Explain why each question is useful.

@@ -1,0 +1,64 @@
+id,topic,marks,prompt
+NUT1,Nutrition: Macronutrients,1,What does the body mainly need glucose for?
+NUT2,Nutrition: Macronutrients,1,What does the body mainly need fats for?
+NUT3,Nutrition: Macronutrients,1,What does the body mainly need proteins for?
+MIN1,Nutrition: Minerals,2,Why does the body need calcium? Give two reasons.
+MIN2,Nutrition: Minerals,2,Why does the body need iron? Mention the blood in your answer.
+VIT1,Nutrition: Deficiency diseases,2,A person lacking vitamin C may develop which disease? State one symptom.
+VIT2,Nutrition: Deficiency diseases,2,A person lacking vitamin D may develop which disease? State one symptom.
+VIT3,Nutrition: Deficiency diseases,2,A person lacking iron may develop which condition? State one symptom.
+FOOD1,Nutrition: Preventing deficiency,2,What foods can help prevent scurvy? Give two examples.
+FOOD2,Nutrition: Preventing deficiency,2,What foods can help prevent rickets? Give two examples.
+BD1,Balanced diet,2,What is a balanced diet?
+BD2,Balanced diet,4,Give an example of what proportions/quantities of different foods you would eat to keep a balanced diet (include at least 4 food groups).
+HL1,Healthy lifestyle,2,State two ways an unbalanced diet can harm health.
+HL2,Healthy lifestyle,2,Give two healthy lifestyle choices (other than diet) that reduce the risk of disease.
+HEART1,Circulatory health: Cholesterol,2,What can happen inside an artery if a person eats too much cholesterol/saturated fat over time?
+HEART2,Circulatory health: Thrombosis,2,What is thrombosis?
+HEART3,Circulatory health: Heart attack,3,What causes a heart attack? Mention blood supply to the heart.
+HEART4,Circulatory health: Stroke,3,What causes a stroke? Mention blood supply to the brain.
+HEART5,Circulatory health: Prevention,4,What should you include in your diet to reduce the risk of high cholesterol? Give three clear suggestions (foods/nutrients) and explain briefly.
+SMK1,Smoking: Lungs,3,How does smoking affect the lungs? Mention at least two effects.
+SMK2,Smoking: Diseases,2,Name three diseases or illnesses a smoker could develop.
+SMK3,Smoking: Evaluation,4,A student says: 'Smoking only harms the smoker.' Do you agree? Explain using the idea of passive smoking.
+EX1,Exercise: Benefits,3,Explain how regular exercise improves the efficiency of organs such as the heart and lungs.
+EX2,Exercise: Health,2,Give two ways exercise can reduce the risk of illness or injury.
+DATA1,Working scientifically: Pulse data,2,"Four people measured pulse rate at rest, straight after exercise, and 1–3 minutes after. Why is pulse rate expected to change after exercise?"
+DATA2,Working scientifically: Pulse data,4,"Create a results table (with headings) for Anwar: 71,110,90,79,71; Baylee: 74,115,89,77,73; Chiumbo: 73,125,115,108,91; Daisy: 53,80,71,46,84."
+DATA3,Working scientifically: Pulse data,4,Describe the overall trend for pulse rate from 'straight after exercise' to '3 minutes after' for most people.
+DATA4,Working scientifically: Pulse data,3,Who had the highest pulse straight after exercise? What might that suggest about intensity/fitness?
+DATA5,Working scientifically: Pulse data,4,"Compare Anwar and Chiumbo to decide who appears fitter. Use evidence from the numbers (e.g., peak pulse and recovery)."
+DATA6,Working scientifically: Pulse data,3,"Which result does not follow the expected recovery trend? Identify it and suggest one reason (e.g., measurement error)."
+DATA7,Working scientifically: Pulse data,4,"State two improvements to make this pulse-rate investigation more reliable (e.g., repeats, controlling exercise). Explain why each helps."
+STAT1,Data skills: Smoking survey,2,"In a survey, 1000 boys and 1000 girls aged 11–14 were asked about smoking. What does 'occasional smoker' mean compared to 'regular smoker'?"
+STAT2,Data skills: Smoking survey,3,"Using Table 5.2, describe the trend for boys’ regular smoking from age 11 to 14 (10,30,60,140)."
+STAT3,Data skills: Smoking survey,3,"Using Table 5.2, describe the trend for girls’ regular smoking from age 11 to 14 (10,35,70,160)."
+STAT4,Data skills: Smoking survey,3,"Identify one anomalous/unusual result in the table and suggest one possible explanation (e.g., reporting error, sampling issue)."
+STAT5,Data skills: Smoking survey,2,"What is the difference in the number of regular smokers between boys and girls at age 14? (boys 140, girls 160)"
+STAT6,Data skills: Smoking survey,3,What percentage of 12-year-old boys are regular smokers? (30 out of 1000) Show your working.
+STAT7,Data skills: Smoking survey,4,"Predict whether the percentage of regular smokers at age 15 would likely go up, stay similar, or go down. Use evidence from ages 11–14 to justify."
+STAT8,Data skills: Smoking survey,4,"Suggest one action a school could take to reduce smoking in ages 11–14, and explain how it might work."
+ECO1,Ecosystems: Key idea,2,What is an ecosystem?
+ECO2,Ecosystems: Types,2,Name two ecosystems found on land.
+ECO3,Ecosystems: Ocean habitats,2,Name four habitats in the ocean ecosystem.
+ECO4,Pollution: Toxins,2,What is a toxin?
+ECO5,Pollution: Impacts,3,How are toxins harmful to living things in an ecosystem? Give two effects.
+ECO6,Pollution: Examples,2,Name two toxins/pollutants that can damage an ecosystem.
+ECO7,Pollution: Bioaccumulation,3,What does bioaccumulation mean?
+ECO8,Pollution: Food chains,4,Explain why top predators can have the highest toxin levels in a food chain (use bioaccumulation).
+INV1,Invasive species,2,What is an invasive species?
+INV2,Invasive species,2,Give one example of an invasive species (any country).
+INV3,Invasive species,5,"Explain three ways an invasive species can damage an ecosystem. Use at least one example idea (competition, predation, disease, habitat change)."
+FIELD1,Fieldwork: Quadrat,2,What is a quadrat?
+FIELD2,Fieldwork: Quadrat,3,What is a quadrat used for in an ecosystem survey? Give one example of what you would measure.
+FIELD3,Fieldwork: Tullgren funnel,3,Describe (or draw in words) what a Tullgren funnel is used for.
+FIELD4,Fieldwork: Pitfall trap,2,What is a pitfall trap?
+FIELD5,Fieldwork: Pitfall trap,4,How would you set up a pitfall trap safely and fairly? Describe the key steps.
+FIELD6,Fieldwork: Predictions,2,What type of animals would you predict to catch in a pitfall trap? Explain briefly.
+FIELD7,Fieldwork: Risk control,4,What must you do to control risks when making a survey in an ecosystem? Give three safety steps.
+FIELD8,Fieldwork: Transect,4,Explain how you would make a transect from under a tree to open grass 3 metres away. Include how you would take measurements along it.
+FIELD9,Fieldwork: Data interpretation (Table 7.1),4,"Using Table 7.1, describe the pattern of herbivorous beetles from traps 0–6 (6,6,5,2,0,0,0) and suggest one reason."
+FIELD10,Fieldwork: Data interpretation (Table 7.1),4,"Using Table 7.1, explain why moth caterpillars are highest around traps 4–6 (10,12,8). Link your answer to habitat/food."
+FIELD11,Fieldwork: Predators and prey (Table 7.1),5,"Using Table 7.1, suggest reasons for the numbers of carnivorous beetles and spiders at traps 0–5. Use predator–prey ideas."
+FIELD12,Fieldwork: Comparing zones (Table 7.1),4,Compare the total number of animals at traps 0–5 with traps 6–10. What does this suggest about conditions along the transect?
+FIELD13,Fieldwork: Anomalies (Table 7.1),4,"Identify one result in Table 7.1 that does not fit the overall pattern and suggest a possible explanation (e.g., chance, trap issue, weather)."

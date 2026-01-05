@@ -1,0 +1,40 @@
+id,topic,marks,prompt
+L1,Light: Reflection,1,"State what happens when a ray of light reflects from a smooth, flat surface."
+L2,Light: Reflection,2,State the law of reflection (two parts).
+L3,Light: Reflection,2,A ray hits a plane mirror at an angle of incidence of 35°. What is the angle of reflection?
+L4,Light: Reflection,3,Explain how you measure the angle of incidence. Your answer must mention the normal line.
+L5,Light: Reflection (Diagram),4,"Draw a ray diagram for reflection from a plane mirror. Label: incident ray, reflected ray, normal, angle of incidence, angle of reflection."
+L6,Light: Refraction,2,Describe what happens to the path of a light ray when it moves from one transparent material to another.
+L7,Light: Refraction,3,Define refraction and state where it occurs.
+L8,Light: Refraction,4,Light travels from air into glass. (a) Does it bend towards or away from the normal? (b) Explain your answer using the idea of speed changing.
+L9,Light: Prism,4,A prism can split white light into colours. Explain why (mention refraction and that different colours change speed by different amounts).
+L10,Light: Filters,3,Explain what happens when white light is shone through a green filter.
+L11,Light: Colour Mixing,2,What colour is produced when a beam of red light is mixed with a beam of blue light (additive mixing)?
+L12,Light: Colour Mixing (Application),4,"A stage uses red, green and blue spotlights on a white screen. (a) What colour appears where all three overlap? (b) What colour appears where red and green overlap? (c) Explain why using additive mixing."
+M1,Magnetism: Magnetic Fields,2,Where would you find a magnetic field? Give two examples.
+M2,Magnetism: Testing for Magnetism,3,A student sprinkles iron filings around a metal bar. Describe the pattern that would show it is a magnet and explain what the pattern represents.
+M3,Magnetism: Field Lines,3,What is a magnetic field line (line of force)? State two things field lines can show about a field.
+M4,Magnetism: Poles (Field Pattern),4,Two bar magnets are placed close together with the north pole of one facing the south pole of the other. Describe how the field lines look between the magnets and what this tells you about the field strength there.
+EM1,Electromagnets,2,What happens to an electromagnet when you switch the current (a) on and (b) off?
+EM2,Electromagnets,4,"State two changes you could make to an electromagnet/circuit to make it stronger, and explain why each change increases strength."
+EM3,Electromagnets (Investigation),4,"Plan a simple test to compare the strength of two electromagnets. State (a) what you would measure, (b) what you would keep the same (fair test), and (c) what you would change."
+E1,Earth’s Magnetism,3,Explain what happens inside Earth that helps produce a magnetic field around it (use the idea of moving molten metal).
+E2,Earth’s Magnetism,3,Explain why a compass can be used to find direction on Earth.
+ER1,Energy Resources: Renewable vs Non-renewable,2,Explain the difference between renewable and non-renewable resources.
+ER2,Energy Resources: Wind,4,(a) Explain why wind is renewable. (b) Describe how a wind turbine transfers wind energy into electrical energy.
+ER3,Energy Resources: Tides,2,What are tides?
+ER4,Energy Resources: Tidal Energy,4,Explain why tidal energy is renewable and describe one way tidal energy can be converted into electrical energy.
+ER5,Energy Resources: Solar,3,What is solar power? Describe one way it can be used to produce electricity or heat.
+ER6,Energy Resources: Fossil Fuels,3,Why are fossil fuels non-renewable? Give two reasons.
+ER7,Materials: Bioplastics,4,Give two renewable materials used to make bioplastics. Then explain two reasons why bioplastics can be better than ordinary plastics.
+WC1,Weather vs Climate,2,Define weather and define climate.
+WC2,Weather,2,Name four features (elements) of weather.
+WC3,Atmosphere: Sun’s Effect,4,"Explain three ways the Sun affects Earth’s atmosphere (e.g., heating, evaporation, convection, winds)."
+WC4,Atmosphere: Earth’s Movement,3,Describe two ways Earth’s movement causes atmospheric changes (day/night and seasons).
+WC5,Climate Change: Evidence,4,"Name three ways scientists study evidence of past climate change (e.g., ice cores, tree rings). For each, state what it can tell us."
+WC6,Climate Change: Past Patterns,3,Describe how Earth’s climate has changed in the past (include ice ages and interglacial periods).
+S1,Space: Galaxies,2,What is a galaxy?
+S2,Space: Stellar Dust,2,What is stellar (interstellar) dust?
+S3,Space: Stars vs Planetary Systems,3,Explain the difference between a star and a planetary system. Give one example of each.
+S4,Space: Exoplanets,2,Is Earth an exoplanet? Explain your answer.
+S5,Space: Asteroids (Application),5,You are observing a planetary system. Describe how you would recognise an asteroid. Include (a) two characteristics and (b) one method of observation or evidence you would use.

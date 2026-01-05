@@ -1,0 +1,57 @@
+id,topic,marks,prompt
+NUT1,Nutrition: Macronutrients,1,What does the body mainly need glucose for?
+NUT2,Nutrition: Macronutrients,1,What does the body mainly need fats for?
+NUT3,Nutrition: Macronutrients,1,What does the body mainly need proteins for?
+MIN1,Nutrition: Minerals,2,Why does the body need calcium? Give two reasons.
+MIN2,Nutrition: Minerals,2,Why does the body need iron? Mention the blood in your answer.
+VIT1,Nutrition: Deficiency diseases,2,"If someone lacks vitamin C, which deficiency disease might they develop? State one symptom."
+VIT2,Nutrition: Deficiency diseases,2,"If someone lacks vitamin D, which deficiency disease might they develop? State one symptom."
+VIT3,Nutrition: Deficiency diseases,2,"If someone lacks iron, which condition might they develop? State one symptom."
+FOOD1,Nutrition: Preventing deficiency,2,Name two foods that can help prevent scurvy.
+FOOD2,Nutrition: Preventing deficiency,2,Name two foods that can help prevent rickets.
+BD1,Balanced diet,2,What is a balanced diet?
+BD2,Balanced diet,4,Give an example of what proportions/quantities of different foods you would eat in a day to keep a balanced diet (include at least 4 food groups).
+HL1,Healthy lifestyle,2,State two ways an unbalanced diet can harm health.
+HL2,Healthy lifestyle,2,Give two healthy lifestyle choices (other than diet) that reduce the risk of disease.
+HEART1,Circulatory health: Cholesterol,2,What can happen inside an artery if someone regularly eats too much cholesterol/saturated fat?
+HEART2,Circulatory health: Thrombosis,2,What is thrombosis?
+HEART3,Circulatory health: Heart attack,3,What causes a heart attack? Mention blood supply to the heart.
+HEART4,Circulatory health: Stroke,3,What causes a stroke? Mention blood supply to the brain.
+HEART5,Circulatory health: Prevention,4,Suggest three diet changes that can reduce the risk of high cholesterol. Explain briefly how each helps.
+SMK1,Smoking: Lungs,3,How does smoking affect the lungs? Mention at least two effects.
+SMK2,Smoking: Diseases,2,Name three diseases or illnesses a smoker could develop.
+SMK3,Smoking: Evaluation,4,A student says: 'Smoking only harms the smoker.' Do you agree? Explain using the idea of passive smoking.
+EX1,Exercise: Benefits,3,Explain how regular exercise improves the efficiency of organs such as the heart and lungs.
+EX2,Exercise: Health,2,Give two ways exercise can reduce the risk of illness or injury.
+WS1,Working scientifically: Pulse investigation,3,Describe how you could investigate how exercise affects pulse rate. Include what you would measure and when.
+WS2,Working scientifically: Fair test,4,"In a pulse-rate investigation, state three variables you should control to make it a fair test and explain why each one matters."
+WS3,Working scientifically: Reliability,4,State two ways to make a pulse-rate investigation more reliable and explain why each improvement helps.
+WS4,Working scientifically: Data trends,4,"In general, what trend do you expect to see in pulse rate (a) immediately after exercise and (b) a few minutes after exercise? Explain why."
+WS5,Working scientifically: Fitness judgement,4,Two students do the same exercise. Student A’s pulse returns to normal faster than Student B’s. What might this suggest about fitness? Explain.
+WS6,Working scientifically: Anomalies,3,What is an anomalous result? Give one reason why you might get an anomalous result in a pulse-rate experiment.
+STAT1,Data skills: Surveys,2,What is a survey? Give one reason surveys are useful in health science.
+STAT2,Data skills: Survey problems,3,"Give three possible problems with survey data about smoking in teenagers (e.g., honesty, sample size, bias)."
+STAT3,Data skills: Percentages,3,A survey asked 1000 students and 60 said they smoke regularly. What percentage is this? Show your working.
+STAT4,Data skills: Predictions,4,A survey shows smoking increases with age from 11 to 14. Predict what might happen at age 15 and give two reasons for your prediction.
+STAT5,Data skills: Reducing smoking,4,"Suggest two actions a school could take to reduce smoking in ages 11–14, and explain how each action could work."
+ECO1,Ecosystems: Key idea,2,What is an ecosystem?
+ECO2,Ecosystems: Types,2,Name two ecosystems found on land.
+ECO3,Ecosystems: Ocean habitats,3,Name four habitats found in ocean ecosystems.
+ECO4,Pollution: Toxins,2,What is a toxin?
+ECO5,Pollution: Impacts,3,How are toxins harmful to living things in an ecosystem? Give two effects.
+ECO6,Pollution: Examples,2,Name two toxins/pollutants that can damage an ecosystem.
+ECO7,Pollution: Bioaccumulation,3,What does bioaccumulation mean?
+ECO8,Pollution: Food chains,4,Explain why top predators can end up with the highest levels of toxins in a food chain (use bioaccumulation).
+INV1,Invasive species,2,What is an invasive species?
+INV2,Invasive species,2,Give one example of an invasive species.
+INV3,Invasive species,5,"Explain three ways an invasive species can damage an ecosystem (e.g., competition, predation, disease, habitat change)."
+FIELD1,Fieldwork: Quadrat,2,What is a quadrat?
+FIELD2,Fieldwork: Quadrat,3,What is a quadrat used for in an ecosystem survey? Give one example of data you would collect.
+FIELD3,Fieldwork: Tullgren funnel,3,What is a Tullgren funnel used for? Describe the type of organisms it helps collect.
+FIELD4,Fieldwork: Pitfall trap,2,What is a pitfall trap used for?
+FIELD5,Fieldwork: Pitfall trap,4,Describe how you would set up a pitfall trap safely and fairly. Include key steps.
+FIELD6,Fieldwork: Predictions,2,What types of animals would you expect to catch in a pitfall trap? Explain briefly.
+FIELD7,Fieldwork: Risk control,4,State three safety steps to control risks during a field survey in an ecosystem and explain why each is important.
+FIELD8,Fieldwork: Transect,4,Explain how to carry out a transect from under a tree to open grass. Include how you would take measurements at intervals.
+FIELD9,Fieldwork: Explaining patterns,4,"In a transect from under a tree to open grass, you find more insects near the tree and fewer in the open. Suggest two reasons for this pattern."
+FIELD10,Fieldwork: Interpreting results,4,"In a pitfall-trap survey, one trap catches far more animals than the others. Give two possible reasons for this unusual result."
